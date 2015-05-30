@@ -19,17 +19,17 @@ ASEM-51 V1.3                                         Copyright (c) 2002 by W.W. 
  Line  I  Addr  Code            Source
 
     1:	  0000	B2 83		MAIN:	CPL P0.3		; Comuta o led
-    2:	  0002	11 06			ACALL TEMPO		; Chama rotina de tempo
-    3:	  0004	01 00			AJMP MAIN		; Volta para o início
+    2:	  0002	12 00 07		CALL TEMPO		; Chama rotina de tempo
+    3:	  0005	80 F9			JMP MAIN		; Volta para o início
     4:
     5:				;*******************************
     6:				; TEMPO
     7:				;*******************************
-    8:	  0006	78 FF		TEMPO:	MOV R0,#255
-    9:	  0008	79 FF		VOLTE:	MOV R1,#255
-   10:	  000A	D9 FE			DJNZ R1,$
-   11:	  000C	D8 FA			DJNZ R0,VOLTE
-   12:	  000E	22			RET
+    8:	  0007	78 FF		TEMPO:	MOV R0,#255
+    9:	  0009	79 FF		VOLTE:	MOV R1,#255
+   10:	  000B	D9 FE			DJNZ R1,$
+   11:	  000D	D8 FA			DJNZ R0,VOLTE
+   12:	  000F	22			RET
    13:				;********************************
    14:					END
 
@@ -121,7 +121,7 @@ T0				  BIT	      B4
 T1				  BIT	      B5
 TB8				  BIT	      9B
 TCON				  DATA	      88
-TEMPO				  CODE	    0006	   8
+TEMPO				  CODE	    0007	   8
 TF0				  BIT	      8D
 TF1				  BIT	      8F
 TH0				  DATA	      8C
@@ -135,5 +135,5 @@ TMOD				  DATA	      89
 TR0				  BIT	      8C
 TR1				  BIT	      8E
 TXD				  BIT	      B1
-VOLTE				  CODE	    0008	   9
+VOLTE				  CODE	    0009	   9
 WR				  BIT	      B6

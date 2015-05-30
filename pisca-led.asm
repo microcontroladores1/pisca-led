@@ -1,6 +1,6 @@
 MAIN:	CPL P0.3		; Comuta o led
-	ACALL TEMPO		; Chama rotina de tempo
-	AJMP MAIN		; Volta para o início
+	CALL TEMPO		; Chama rotina de tempo
+	JMP MAIN		; Volta para o início
 
 ;*******************************
 ; TEMPO
