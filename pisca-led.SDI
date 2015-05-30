@@ -1,0 +1,14 @@
+0000,B2 83,MAIN,MAIN:   CPL P0.3                ; Comuta o led
+0002,11 06,,        ACALL TEMPO             ; Chama rotina de tempo
+0004,01 00,,        AJMP MAIN               ; Volta para o início
+,,,
+,,,;*******************************
+,,,; TEMPO
+,,,;*******************************
+0006,78 FF,TEMPO,TEMPO:  MOV R0,#255
+0008,79 FF,VOLTE,VOLTE:  MOV R1,#255
+000A,D9 FE,,        DJNZ R1,$
+000C,D8 FA,,        DJNZ R0,VOLTE
+000E,22,,        RET
+,,,;********************************
+000E,,,        END
